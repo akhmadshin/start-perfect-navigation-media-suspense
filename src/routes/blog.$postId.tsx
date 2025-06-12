@@ -1,9 +1,8 @@
 import { ErrorComponent, createFileRoute } from '@tanstack/react-router'
 import { NotFound } from '~/components/NotFound'
-import React, { Suspense } from 'react'
-import { ArticlePage } from 'src/pages/ArticlePage';
+import React from 'react'
 import { blogItemPageOptions } from '~/utils/posts/useBlogItemPageData';
-import { ArticlePageFallback } from '~/pages/ArticlePage/ArticlePageFallback';
+import { ArticlePage } from '~/pages/ArticlePage';
 
 const NotFoundRouteComponent = () => <NotFound>Post not found</NotFound>
 
@@ -20,8 +19,6 @@ export const Route = createFileRoute('/blog/$postId')({
 
 function PostComponent() {
   return (
-    <Suspense fallback={<ArticlePageFallback />}>
-      <ArticlePage />
-    </Suspense>
+    <ArticlePage />
   );
 }
