@@ -6,6 +6,7 @@ yarn.lock
 .cache
 .env
 .vercel
+.idea
 .output
 /build/
 /api/
